@@ -1,1 +1,1 @@
-# argocd-server
+To test the argoCD servers
