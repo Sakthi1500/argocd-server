@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-deployment
+  name: frontend-deployment        # lowercase, DNS-compliant name
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: frontend
+      app: frontend                # must match template labels
   template:
     metadata:
       labels:
@@ -15,3 +15,6 @@ spec:
       containers:
         - name: frontend-container
           image: nginx:latest
+          ports:
+            - containerPort: 80    # expose port 80 (nginx default)
+
